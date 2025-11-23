@@ -36,6 +36,18 @@ A beautiful, interactive 3D piano visualizer with falling notes in the style of 
   - Auto-rotating camera in menu state
   - Interactive controls with damping
 
+## 📺 Want to Learn How to Build This?
+
+Check out my YouTube channel [@gobienan](https://youtube.com/@gobienan) where I teach how to create stunning 3D web applications like this one! 
+
+**Subscribe for tutorials on:**
+- 🎨 Three.js & React Three Fiber
+- 🎵 Audio visualization
+- 🎮 Interactive 3D experiences
+- 🚀 Modern web development
+
+👉 [**Subscribe to @gobienan on YouTube**](https://youtube.com/@gobienan)
+
 ## 🚀 Getting Started
 
 ### Prerequisites
