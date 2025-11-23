@@ -7,7 +7,7 @@ import { PianoVisualizer } from "@/components/piano-visualizer"
 import { Button } from "@/components/ui/button"
 import { Slider } from "@/components/ui/slider"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
-import { Play, Pause, Upload, Music, Volume2, Loader2, Gauge, RotateCcw, Youtube, Twitter } from "lucide-react"
+import { Play, Pause, Upload, Music, Volume2, Loader2, Gauge, RotateCcw, Youtube, Twitter, Globe } from "lucide-react"
 import * as Tone from "tone"
 import { Midi } from "@tonejs/midi"
 
@@ -578,6 +578,16 @@ export function PianoPlayer() {
         >
           <Twitter className="w-4 h-4 text-white/60 group-hover:text-blue-400 transition-colors" />
           <span className="text-white/60 text-xs font-medium group-hover:text-white transition-colors">@gobienan</span>
+        </a>
+
+        <a
+          href="https://gobienan.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 bg-white/5 hover:bg-emerald-400/20 backdrop-blur-sm px-3 py-2 rounded-full border border-white/10 transition-all group"
+        >
+          <Globe className="w-4 h-4 text-white/60 group-hover:text-emerald-400 transition-colors" />
+          <span className="text-white/60 text-xs font-medium group-hover:text-white transition-colors">gobienan.com</span>
         </a>
       </div>
 
