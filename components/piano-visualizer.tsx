@@ -65,6 +65,7 @@ const HIT_Y = 0 // Where keys are
 const VISIBLE_WINDOW = FALL_HEIGHT / NOTE_SPEED // Seconds visible
 const KEY_Z = 0 // Z position where keys are (for Synthesia view)
 const SPAWN_Z = -FALL_HEIGHT // Z position where notes spawn (for Synthesia view)
+const NOTE_GAP = 0.1 * NOTE_SPEED // Visual gap between notes (0.1s)
 
 const COLORS = {
   cyan: "#4dd0e1",
@@ -261,13 +262,14 @@ function FallingNotes({
         // Visibility Check
         if (timeUntilHit > VISIBLE_WINDOW || timeUntilHit + note.duration < -0.5) return null
 
-        const y = HIT_Y + timeUntilHit * NOTE_SPEED + (note.duration * NOTE_SPEED) / 2
-        // Ensure note doesn't go below key bed too much visually before disappearing
-        // Actually, we want it to look like it hits and disappears or passes through?
-        // Synthesia notes usually just stop or pass through. Passing through is easier.
+        // Height corresponds to duration, minus a small gap
+        const fullHeight = note.duration * NOTE_SPEED
+        const height = Math.max(0.1, fullHeight - NOTE_GAP)
 
-        // Height corresponds to duration
-        const height = note.duration * NOTE_SPEED
+        // Calculate Y position
+        // Head (bottom) is at HIT_Y + timeUntilHit * NOTE_SPEED
+        // Center is Head + height / 2
+        const y = HIT_Y + timeUntilHit * NOTE_SPEED + height / 2
 
         // Colors
         const color = note.color
@@ -348,7 +350,10 @@ function SynthesiaFallingNotes({
         // We want the note to "disappear" into the keys at Z=0 (KEY_Z)
 
         // Original full length of the note
-        const fullDepth = note.duration * NOTE_SPEED
+        const fullDepthOriginal = note.duration * NOTE_SPEED
+
+        // Apply visual gap
+        const fullDepth = Math.max(0.1, fullDepthOriginal - NOTE_GAP)
 
         // Calculate where the "head" (bottom) of the note is
         // Head is at Z = KEY_Z - (timeUntilHit * NOTE_SPEED)
@@ -356,7 +361,9 @@ function SynthesiaFallingNotes({
         // If timeUntilHit is negative, head is at positive Z (past keys)
 
         let currentDepth = fullDepth
-        let zCenter = KEY_Z - (timeUntilHit * NOTE_SPEED + fullDepth / 2)
+        // Center is Head - currentDepth / 2
+        // Head position is unchanged by the gap (it's the leading edge)
+        let zCenter = (KEY_Z - (timeUntilHit * NOTE_SPEED)) - currentDepth / 2
 
         // If the note has started hitting (timeUntilHit < 0), we need to clip it
         if (timeUntilHit < 0) {
