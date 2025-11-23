@@ -47,7 +47,7 @@ A beautiful, interactive 3D piano visualizer with falling notes in the style of 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/piano-tutorial-player.git
+git clone https://github.com/gobienan/piano-tutorial-player.git
 cd piano-tutorial-player
 ```
 
@@ -157,9 +157,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-Your Name - [@yourtwitter](https://twitter.com/yourtwitter)
+Gobie - [@gobienan](https://twitter.com/gobienan)
 
-Project Link: [https://github.com/yourusername/piano-tutorial-player](https://github.com/yourusername/piano-tutorial-player)
+Project Link: [https://github.com/gobienan/piano-tutorial-player](https://github.com/gobienan/piano-tutorial-player)
 
 ---
 
