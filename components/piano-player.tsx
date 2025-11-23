@@ -7,7 +7,7 @@ import { PianoVisualizer } from "@/components/piano-visualizer"
 import { Button } from "@/components/ui/button"
 import { Slider } from "@/components/ui/slider"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
-import { Play, Pause, Upload, Music, Volume2, Loader2, Gauge, RotateCcw, Youtube } from "lucide-react"
+import { Play, Pause, Upload, Music, Volume2, Loader2, Gauge, RotateCcw, Youtube, Twitter } from "lucide-react"
 import * as Tone from "tone"
 import { Midi } from "@tonejs/midi"
 
@@ -558,16 +558,28 @@ export function PianoPlayer() {
         </div>
       </div>
 
-      {/* YouTube Promo - Bottom Left */}
-      <a
-        href="https://youtube.com/@gobienan"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="absolute bottom-6 left-6 z-20 flex items-center gap-2 bg-white/5 hover:bg-red-500/20 backdrop-blur-sm px-3 py-2 rounded-full border border-white/10 transition-all group pointer-events-auto"
-      >
-        <Youtube className="w-4 h-4 text-white/60 group-hover:text-red-500 transition-colors" />
-        <span className="text-white/60 text-xs font-medium group-hover:text-white transition-colors">@gobienan</span>
-      </a>
+      {/* Social Promos - Bottom Left */}
+      <div className="absolute bottom-6 left-6 z-20 flex gap-3 pointer-events-auto">
+        <a
+          href="https://youtube.com/@gobienan"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 bg-white/5 hover:bg-red-500/20 backdrop-blur-sm px-3 py-2 rounded-full border border-white/10 transition-all group"
+        >
+          <Youtube className="w-4 h-4 text-white/60 group-hover:text-red-500 transition-colors" />
+          <span className="text-white/60 text-xs font-medium group-hover:text-white transition-colors">@gobienan</span>
+        </a>
+
+        <a
+          href="https://twitter.com/gobienan"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 bg-white/5 hover:bg-blue-400/20 backdrop-blur-sm px-3 py-2 rounded-full border border-white/10 transition-all group"
+        >
+          <Twitter className="w-4 h-4 text-white/60 group-hover:text-blue-400 transition-colors" />
+          <span className="text-white/60 text-xs font-medium group-hover:text-white transition-colors">@gobienan</span>
+        </a>
+      </div>
 
     </div>
   )
