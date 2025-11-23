@@ -363,7 +363,9 @@ export function PianoPlayer() {
   }, [isPlaying])
 
   // Available MIDI files
+  // Available MIDI files
   const availableMidis = [
+    { name: "Moonlight Sonata 3rd Movement", path: "/midi/Moonlight Sonata 3rd Movement.midi (piano only).mid" },
     { name: "Naruto - Sadness And Sorrow", path: "/midi/Naruto -Sadness And Sorrow (piano).mid" },
     { name: "Naruto Shippuden - Blue Bird", path: "/midi/Naruto Shippuden - Blue Bird.mid" },
     { name: "Digimon - Butterfly", path: "/midi/Digimon - Butterfly (Piano Version).mid" },
